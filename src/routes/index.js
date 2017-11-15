@@ -17,6 +17,11 @@ router.post('/quizzes/:id/sessions', SessionController.saveSession)
 
 router.post('/question', QuestionController.saveQuestion)
 
+router.get('/sessions/:sessionId/:questionId', SessionController.getSessionQuestion)
+router.post('/sessions/:sessionId/:questionId', SessionController.postSessionAnswer)
+
+
+
 router.get('*', async (ctx, next) => {
   ctx.body = { status : 404 }
 })

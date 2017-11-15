@@ -4,7 +4,6 @@
 const QuizModel = require('../models/quizzes')
 class QuizController {
 
-  // 用户注册
   static async findQuizById (ctx) {
     const id = ctx.params.id
 
@@ -13,8 +12,6 @@ class QuizController {
     return ctx.success({data: quiz})
   }
 
-  // 用户登录
-  // 用户注册
   static async saveQuiz (ctx) {
     const quizDa = new QuizModel();
     quizDa.title = '测试标题';

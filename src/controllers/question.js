@@ -6,8 +6,6 @@ const AnswerModel = require('../models/answers')
 const AnswerOptionModel = require('../models/answers/answer_options')
 class QuestionController {
 
-  // 用户登录
-  // 用户注册
   static async saveQuestion (ctx) {
 
     const q = new QuestionModel()
