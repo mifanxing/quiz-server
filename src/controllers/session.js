@@ -58,7 +58,7 @@ class SessionController {
         multiple:answer.multiple,
         options:answer_options
       },
-      next:nextQuestion?  nextQuestion.id:null
+      next:!!nextQuestion?  nextQuestion.id:null
     }
 
     return ctx.success({data})
@@ -95,6 +95,21 @@ class SessionController {
         options:answer_options
       },
       next:nextQuestion?  nextQuestion.id:null
+    }
+
+    return ctx.success({data})
+  }
+
+
+  static async getSessionResult (ctx) {
+    const sessionId = ctx.params.sessionId
+
+    const total_count = await RecordModal.count({session:sessionId})
+    const correct_count = await RecordModal.count({session:sessionId,correct:true})
+
+    const data = {
+      score:correct_count,
+      total:total_count,
     }
 
     return ctx.success({data})
