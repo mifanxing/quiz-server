@@ -58,9 +58,9 @@ class SessionController {
         multiple:answer.multiple,
         options:answer_options
       },
-      next:!!nextQuestion?  nextQuestion.id:null
+      next:!!nextQuestion?  nextQuestion.id:null,
     }
-
+    record && (data.chooseValue = record.value)
     return ctx.success({data})
   }
 
