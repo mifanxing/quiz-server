@@ -84,7 +84,7 @@ class SessionController {
     recordModal.session = sessionId
     recordModal.correct = answer_value.correct
 
-    await recordModal.save()
+    const record = await recordModal.save()
 
     const data = {
       session_id: sessionId,
@@ -94,9 +94,10 @@ class SessionController {
         multiple:answer.multiple,
         options:answer_options
       },
-      next:nextQuestion?  nextQuestion.id:null
+      next:nextQuestion?  nextQuestion.id:null,
+      chooseValue: value,
     }
-
+    
     return ctx.success({data})
   }
 
