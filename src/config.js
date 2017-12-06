@@ -3,11 +3,11 @@
  */
 module.exports = {
   development: {
-    mongodbURI: 'mongodb://39.106.33.48:27017/quiz',
+    mongodbURI: 'mongodb://quiz:budee123@39.106.33.48:27017/quiz',
     port: 5000,
   },
   production: {
-    mongodbURI: 'mongodb://39.106.33.48:27017/quiz',
+    mongodbURI: 'mongodb://quiz:budee123@39.106.33.48:27017/quiz',
     port: 8080,
   }
 }
